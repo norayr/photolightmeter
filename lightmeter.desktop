@@ -1,0 +1,10 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=Light Meter
+Comment=Calculate shutter and aperture settings
+Exec=/opt/lightmeter/bin/lightmeter
+Icon=lightmeter
+Terminal=false
+X-MultipleArgs=false
+Type=Application
+X-Osso-Type=application/x-executable

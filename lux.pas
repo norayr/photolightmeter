@@ -102,6 +102,8 @@ begin
               if SysUtils.FileExists(tmp) and SysUtils.FileExists(tmu) then
               begin
                 l := readIntFromFile(tmp) * readIntFromFile(tmu);
+                checkNew := true;
+                exit;
               end;
              end;
           end;

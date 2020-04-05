@@ -55,7 +55,7 @@ end;
 
 function checkNew(var l: integer): boolean;
 const
-  drvdir = '/home/inky/src/test/sys/bus/iio/devices';
+  drvdir = '/sys/bus/iio/devices';
   lnk    = 'iio:device';
   inputfile = 'in_illuminance_input';
   inputfile_raw = 'in_illuminance_raw';

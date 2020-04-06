@@ -21,19 +21,19 @@ clean:
 install:
 	    cp lightmeter.png /usr/share/pixmaps/
 	    cp lightmeter.desktop /usr/share/applications/
-	    mkdir -p /opt/lightmeter/bin
-	    cp project1 /opt/lightmeter/bin/lightmeter
+	    mkdir -p /opt/photolightmeter/bin
+	    cp project1 /opt/photolightmeter/bin/photolightmeter
 
 install_hildon:
 	    mkdir -p $(CURDIR)/debian/photolightmeter/usr/share/pixmaps
 	    cp lightmeter.png $(CURDIR)/debian/photolightmeter/usr/share/pixmaps/
 	    mkdir -p $(CURDIR)/debian/photolightmeter/usr/share/applications/hildon
 	    cp lightmeter.desktop $(CURDIR)/debian/photolightmeter/usr/share/applications/hildon/
-	    mkdir -p $(CURDIR)/debian/photolightmeter/opt/lightmeter/bin
-	    cp project1 $(CURDIR)/debian/photolightmeter/opt/lightmeter/bin/lightmeter
+	    mkdir -p $(CURDIR)/debian/photolightmeter/opt/photolightmeter/bin
+	    cp project1 $(CURDIR)/debian/photolightmeter/opt/photolightmeter/bin/photolightmeter
 
 uninstall:	
-	    rm -rf /opt/lightmeter
+	    rm -rf /opt/photolightmeter
 	    rm /usr/share/pixmaps/lightmeter.png
 	    rm /usr/share/applications/lightmeter.desktop
 	    

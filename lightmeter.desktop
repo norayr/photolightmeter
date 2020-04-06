@@ -2,7 +2,7 @@
 Encoding=UTF-8
 Name=Light Meter
 Comment=Calculate shutter and aperture settings
-Exec=/opt/lightmeter/bin/lightmeter
+Exec=/opt/photolightmeter/bin/photolightmeter
 Icon=lightmeter
 Terminal=false
 X-MultipleArgs=false

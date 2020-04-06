@@ -1,0 +1,16 @@
+Source: photolightmeter
+Section: education
+Priority: optional
+Maintainer: norayr chilingarian <norayr@arnet.am>
+Uploaders: norayr chilnigarian <norayr@arnet.am>
+Build-Depends: lazarus 
+Standards-Version: 3.6.1
+
+Package: photolightmeter
+Section: education
+Architecture: any
+Depends: Depends=libatk1.0-0 (>= 1.12.4), libc6 (>= 2.2.5), libcairo2 (>= 1.2.4), libgdk-pixbuf2.0-0 (>= 2.22.0), libglib2.0-0 (>= 2.12.0), libgtk2.0-0 (>= 2.24.0), libpango-1.0-0 (>= 1.18.0), libx11-6 
+Provides: photolightmeter
+Replaces: photolightmeter (<< 1.2)
+Description: photographic light meter which uses phone's ambient light meter.
+XSBC-Bugtracker: mailto:norayr@arnet.am

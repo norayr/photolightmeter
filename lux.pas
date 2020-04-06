@@ -25,7 +25,6 @@ end;
 
 function checkOld(var lux: integer): boolean;
 var
-  f : textfile;
   z, i : integer;
   luxpaths : array [0..3] of string;
   luxfile : string;
@@ -56,6 +55,7 @@ end;
 function checkNew(var l: integer): boolean;
 const
   drvdir = '/sys/bus/iio/devices';
+  drvdirnotfound = 'driver directory ' + drvdir + ' not found';
   lnk    = 'iio:device';
   inputfile = 'in_illuminance_input';
   inputfile_raw = 'in_illuminance_raw';
@@ -63,65 +63,72 @@ const
 var
   info: TSearchRec;
   count : integer;
-  name, tmp, tmu: string;
+  tmp, tmu: string;
 begin
   l := 0;
   checkNew := false;
-  ChDir (drvdir);
-  if IOresult<>0 then
-  begin
-      Writeln ('Cannot change to directory : ',drvdir);
+  if SysUtils.DirectoryExists(drvdir) then begin
+    ChDir (drvdir);
+    if IOresult<>0 then
+    begin
+        Writeln ('Cannot change to directory : ',drvdir);
+    end
+   else
+    begin
+       //searching for device file
+       count:=0;
+      if SysUtils.FindFirst ('*',faAnyFile and faDirectory,Info)=0 then
+      begin
+      repeat
+        inc(count);
+        With info do
+          begin
+          if (Attr and faDirectory) = faDirectory then
+          begin
+            Write('Dir : ');
+            Writeln (name:40,Size:15);
+            if strutils.LeftStr(name, 10) = lnk then
+            begin
+              tmp := drvdir + '/' + name + '/' + inputfile;
+              if SysUtils.FileExists(tmp) then
+              begin
+                l := readIntFromFile(tmp);
+                checkNew := true;
+                exit;
+              end
+             else
+              begin  //it's a pity pascal has no elsif
+                tmp := drvdir + '/' + name + '/' + inputfile_raw;
+                tmu := drvdir + '/' + name + '/' + inputfile_scale;
+                if SysUtils.FileExists(tmp) and SysUtils.FileExists(tmu) then
+                begin
+                  l := readIntFromFile(tmp) * readIntFromFile(tmu);
+                  checkNew := true;
+                  exit;
+                end;
+               end;
+            end;
+          end;
+        end;
+      until SysUtils.FindNext(info)<>0;
+      end;
+      FindClose(Info);
+      end;
   end
  else
   begin
-     //searching for device file
-     count:=0;
-    if SysUtils.FindFirst ('*',faAnyFile and faDirectory,Info)=0 then
-    begin
-    repeat
-      inc(count);
-      With info do
-        begin
-        if (Attr and faDirectory) = faDirectory then
-        begin
-          Write('Dir : ');
-          Writeln (name:40,Size:15);
-          if strutils.LeftStr(name, 10) = lnk then
-          begin
-            tmp := drvdir + '/' + name + '/' + inputfile;
-            if SysUtils.FileExists(tmp) then
-            begin
-              l := readIntFromFile(tmp);
-              checkNew := true;
-              exit;
-            end
-            else
-             begin
-              tmp := drvdir + '/' + name + '/' + inputfile_raw;
-              tmu := drvdir + '/' + name + '/' + inputfile_scale;
-              if SysUtils.FileExists(tmp) and SysUtils.FileExists(tmu) then
-              begin
-                l := readIntFromFile(tmp) * readIntFromFile(tmu);
-                checkNew := true;
-                exit;
-              end;
-             end;
-          end;
-        end;
-      end;
-    until SysUtils.FindNext(info)<>0;
-    end;
-  FindClose(Info);
-  end;
+   Dialogs.ShowMessage(drvdirnotfound);
+  end; //if dir exists
   checkNew := false;
+
 end;
 
 function GetLight() : integer;
 var
-  found: boolean;
   lux: integer;
   b: boolean;
 begin
+  lux := 0;
   GetLight := 0;
   b := checkOld(lux);
   GetLight := lux;

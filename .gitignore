@@ -1,0 +1,10 @@
+backup
+build-stamp
+debian/files
+debian/photolightmeter.debhelper.log
+debian/photolightmeter.install
+debian/photolightmeter.substvars
+debian/photolightmeter/
+lib/
+project1
+project1.dbg

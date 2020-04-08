@@ -1,20 +1,3 @@
-Source: photolightmeter
-Section: education
-Priority: optional
-Maintainer: norayr chilingarian <norayr@arnet.am>
-Uploaders: norayr chilnigarian <norayr@arnet.am>
-Build-Depends:  debhelper (>= 4.0.0), libosso-dev, libdbus-glib-1-2, libglib2.0-0, libosso1, libpango1.0-0, libfreetype6, libcairo2, libdbus-1-3, libhildon1, libhildon1-dev, libfontconfig1, libatk1.0-0, libgtk2.0-0, fpc-source, fpc-source-3.0.4, lazarus
-Standards-Version: 3.6.1
-
-Package: photolightmeter
-Section: education
-Architecture: any
-Depends: libatk1.0-0 (>= 1.12.4), libc6 (>= 2.2.5), libcairo2 (>= 1.2.4), libgdk-pixbuf2.0-0 (>= 2.22.0), libglib2.0-0 (>= 2.12.0), libgtk2.0-0 (>= 2.24.0), libpango-1.0-0 (>= 1.18.0), libx11-6 
-Provides: photolightmeter
-Replaces: photolightmeter (<< 1.2)
-Description: photographic light meter which uses phone's ambient light meter.
-XSBC-Bugtracker: mailto:norayr@arnet.am
-XB-Maemo-Icon-26:
 iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAABA4HpUWHRSYXcg
 cHJvZmlsZSB0eXBlIGV4aWYAAHjarZ1pkiQ5rqT/8xTvCNyX43AzkbnBHH8+
 hVlEZVV3j7xZKrtzifAwNyMBhSoIwN39n//jcf/1X/8V8mjd5dJ6HbV6/ssj
@@ -535,4 +518,3 @@ vn3jnJic5rFfvsDf/d3HkGs1nVDI74bfsfD7Fb57z2N84Ma9HDhwpUf/Bmtr
 BRzH1UCbr+S4Ts7t9eRyZao1DUmSUGQRWZF4pwcr8Kc/nXG9r2XhV12f3JyO
 0t6eorU1wZV7x3j3u3ehqkpjVu2OeN0XPzKZLJ/4xHtYXs7xT//rEb7//S+g
 qgr/H6qQhFpCGyBaAAAAAElFTkSuQmCC
-XSBC-Maemo-Display-Name: Photo light meter

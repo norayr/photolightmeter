@@ -2,7 +2,6 @@ ARCH = $(shell arch)
 ifeq ($(ARCH),armv7l)
 ARCH = arm
 endif
-echo $(ARCH)
 LCL_PLATFORM = $(ARCH)-linux
 #LAZARUS = "/media/mmc1/noch/src/freepascal/lazarus"
 LAZBUILD = /usr/bin/lazbuild
@@ -24,6 +23,7 @@ PARAMS = -MObjFPC -Scgi -Cg -O1 -g -Xg -XX -l -vewnhibq -FD/usr/bin -Fi/usr/shar
 #PARAMS =  $(PROJECT) -Xs -Xg -XX -MObjFPC -Scgi -O1 -gl -WG -vewnhi -l -Fu$(LAZARUS)/lcl/units/$(ARCH)/ -Fu$(LAZARUS)/lcl/units/$(ARCH)/gtk2/ -Fu$(LAZARUS)/packager/units/$(ARCH)/ -Fu. -o$(OUTFILE) -dLCL -dLCLgtk2
 
 all:
+	    echo $(ARCH)
 	    $(FPC) $(PARAMS) $(PROJECT)
 	    #mkdir /tmp/.lazarus
 	    #/usr/bin/lazbuild --verbose-pkgsearch --verbose -B -r --primary-config-path=/tmp/.lazarus project1.lpr

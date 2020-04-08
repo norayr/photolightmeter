@@ -3,7 +3,7 @@ Section: education
 Priority: optional
 Maintainer: norayr chilingarian <norayr@arnet.am>
 Uploaders: norayr chilnigarian <norayr@arnet.am>
-Build-Depends: lazarus 
+Build-Depends: debhelper lazarus 
 Standards-Version: 3.6.1
 
 Package: photolightmeter

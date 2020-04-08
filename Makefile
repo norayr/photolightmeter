@@ -1,7 +1,8 @@
 ARCH = $(shell arch)
-ifeq ($(ARCH),armv71)
-	ARCH = arm
+ifeq ($(ARCH),armv7l)
+ARCH = arm
 endif
+echo $(ARCH)
 LCL_PLATFORM = $(ARCH)-linux
 #LAZARUS = "/media/mmc1/noch/src/freepascal/lazarus"
 LAZBUILD = /usr/bin/lazbuild

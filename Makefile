@@ -18,10 +18,10 @@ PARAMS = -MObjFPC -Scgi -Cg -O1 -g -Xg -XX -l -vewnhibq -Filib/$(LCL_PLATFORM)  
 #PARAMS =  $(PROJECT) -Xs -Xg -XX -MObjFPC -Scgi -O1 -gl -WG -vewnhi -l -Fu$(LAZARUS)/lcl/units/$(ARCH)/ -Fu$(LAZARUS)/lcl/units/$(ARCH)/gtk2/ -Fu$(LAZARUS)/packager/units/$(ARCH)/ -Fu. -o$(OUTFILE) -dLCL -dLCLgtk2
 
 all:
-	    #$(FPC) $(PARAMS) $(PROJECT)
-	    mkdir /tmp/.lazarus
-	    /usr/bin/lazbuild -B -r --primary-config-path=/tmp/.lazarus project1.lpr
-	    rm -rf /tmp/.lazarus 
+	    $(FPC) $(PARAMS) $(PROJECT)
+	    #mkdir /tmp/.lazarus
+	    #/usr/bin/lazbuild -B -r --primary-config-path=/tmp/.lazarus project1.lpr
+	    #rm -rf /tmp/.lazarus 
 
 clean:
 	    rm *.o

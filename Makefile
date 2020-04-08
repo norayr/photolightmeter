@@ -15,13 +15,15 @@ FPC = /usr/bin/fpc
 
 all:
 	    #$(FPC) $(PARAMS) $(PROJECT)
-	    /usr/bin/lazbuild --primary-config-path=$(HOME) project1.lpr
-	    
+	    mkdir /tmp/.lazarus
+	    /usr/bin/lazbuild --primary-config-path=/tmp/.lazarus project1.lpr
+	    rm -rf /tmp/.lazarus 
 
 clean:
 	    rm *.o
 	    rm *.ppu
 	    rm *.dbg
+	    rm -rf /tmp/.lazarus
 install:
 	    cp lightmeter.png /usr/share/pixmaps/
 	    cp lightmeter.desktop /usr/share/applications/

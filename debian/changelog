@@ -1,3 +1,9 @@
+photolightmeter (1.9) unstable; urgency=medium
+
+  *  am trying to understand how this packaging works.
+
+ -- norayr chilingarian <norayr@arnet.am>  Wed, 08 Apr 2020 22:37:55 +0000
+
 photolightmeter (1.8)  unstable; urgency=low
 
    * release to debian and maemo-leste

@@ -15,7 +15,7 @@ FPC = /usr/bin/fpc
 
 all:
 	    #$(FPC) $(PARAMS) $(PROJECT)
-	    /usr/bin/lazbuild project1.lpr
+	    /usr/bin/lazbuild --primary-config-path=$(HOME) project1.lpr
 	    
 
 clean:

@@ -43,7 +43,7 @@ uses Lists,
      strutils};
 const notenoughlight = 'Not enough light';
 const lightisok = 'Light is OK';
-const toomanylight = 'Too many light';
+const toomuchlight = 'Too much light';
 {$R *.lfm}
 
 { TForm1 }
@@ -85,7 +85,7 @@ begin
   n := GetAperture();
   e := Lux.GetLight();
       t := Calculate.Shutter(s, e, n);
-      if t < 1/1500 then Form1.Label5.Caption := toomanylight else Form1.Label5.Caption := lightisok;
+      if t < 1/1500 then Form1.Label5.Caption := toomuchlight else Form1.Label5.Caption := lightisok;
       t := Calculate.FixShutter(t, inx);
       if t > 1 then begin
          Form1.Edit1.Text:= SysUtils.FloatToStr(t);

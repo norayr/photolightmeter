@@ -1,4 +1,4 @@
-photolightmeter (1.4)  unstable; urgency=low
+photolightmeter (1.32)  unstable; urgency=low
 
    * fixed issue that prevented using ambient light meter on pinephone
 	

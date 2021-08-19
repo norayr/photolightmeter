@@ -152,6 +152,10 @@ begin
 end;
 
 procedure TForm1.FormCreate(Sender: TObject);
+const
+  comboFontSize = 42;
+  labelFontSize = 12;
+
 begin
 //n900
 //  Form1.Width:= 800;
@@ -167,15 +171,15 @@ begin
 //  ComboBox1.Text:='ISO';
 //  ComboBox1.Width:=255; //n900
     ComboBox1.Width:=223; //n810
-  ComboBox2.Font.Size:=42;
+  ComboBox2.Font.Size:= comboFontSize;
 //  ComboBox2.Text:='Shutter';
 //  ComboBox2.Width:=255; //n900
     ComboBox2.Width:=223; //n810
-  ComboBox3.Font.Size:=42;
+  ComboBox3.Font.Size:= comboFontSize;
 //  ComboBox3.Text:='Aperture';
 //  ComboBox3.Width:=255; //n900
     ComboBox3.Width:=223; //n810
-//  ComboBox3.ItemHeight:=42;
+    ComboBox3.ItemHeight:= comboFontSize;
 
   Edit1.ReadOnly:= true;
 
@@ -186,6 +190,14 @@ begin
   Label1.Caption:= 'Aperture';
   Label5.Caption := ' ';
   Button1.Caption:= 'Recalculate';
+
+  Label1.Font.Size := labelFontSize;
+  Label2.Font.Size := labelFontSize;
+  Label3.Font.Size := labelFontSize;
+  Label4.Font.Size := labelFontSize;
+  Label5.Font.Size := labelFontSize;
+  Button1.Font.Size:= labelFontSize;
+
   LoadLists;
   Recalc;
 end;

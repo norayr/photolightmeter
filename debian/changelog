@@ -1,3 +1,9 @@
+photolightmeter (1.9.6)  unstable; urgency=low
+
+  * a couple of typos
+	
+ -- norayr chilingarian <norayr@arnet.am>  Fri, 20 Aug 2021 01:52:07 +0400
+
 photolightmeter (1.9.3)  unstable; urgency=low
 
   * fixed issue that prevented using ambient light meter on pinephone

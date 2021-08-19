@@ -23,6 +23,20 @@ begin
   readIntFromFile := z;
 end;
 
+function readRealFromFile(var path: string): real;
+var
+  f: textfile;
+  z: real;
+begin
+  z := 0.0;
+  assign (f, path);
+  reset(f);
+  read (f, z);
+  //lux := SysUtils.StrToInt(s);
+  close(f);
+  readRealFromFile := z;
+end;
+
 function checkOld(var lux: integer): boolean;
 var
   z, i : integer;
@@ -102,7 +116,7 @@ begin
                 tmu := drvdir + '/' + name + '/' + inputfile_scale;
                 if SysUtils.FileExists(tmp) and SysUtils.FileExists(tmu) then
                 begin
-                  l := readIntFromFile(tmp) * readIntFromFile(tmu);
+                  l := Round(readIntFromFile(tmp) * readRealFromFile(tmu));
                   checkNew := true;
                   exit;
                 end;

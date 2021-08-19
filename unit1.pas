@@ -112,7 +112,7 @@ begin
   else
   begin
      if n > 18 then begin
-        Form1.Label5.Caption := toomanylight;
+        Form1.Label5.Caption := toomuchlight;
      end
      else
      begin

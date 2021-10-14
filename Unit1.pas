@@ -50,7 +50,6 @@ begin
  //GetSpeed := SysUtils.StrToInt(s);
 GetSpeed := Lists.iso_bin[Form1.ComboBox1.ItemIndex];
 end;
-
 function GetShutter(): real;
 //var s : string; i : integer;
 begin
@@ -59,7 +58,6 @@ begin
    //GetShutter := 1 / i;
    GetShutter := Lists.shutter_bin[Form1.ComboBox2.ItemIndex];
 end;
-
 function GetAperture(): real;
 //var s : string;
 begin
@@ -67,7 +65,6 @@ begin
   // GetAperture := SysUtils.StrToFloat(s);
    GetAperture := Lists.aperture_bin[Form1.ComboBox3.ItemIndex];
 end;
-
 
 procedure SetShutter;
 var s, e : integer;
@@ -80,7 +77,6 @@ begin
   //delphi fmx
   Form1.Label1.Text:= 'Shutter';
   Form1.Label5.Text:= ' ';
-
   s := GetSpeed();
   n := GetAperture();
   e := Lux.GetLight();
@@ -100,7 +96,6 @@ begin
          Form1.Edit1.Text:= Form1.ComboBox2.Items[inx];
       end;
 end;
-
 procedure SetAperture;
 var s, e : integer;
 t, n : real;
@@ -139,7 +134,6 @@ begin
   //delphi fmx
   Form1.Edit1.Text := System.SysUtils.FloatToStr(n);
 end;
-
 procedure Recalc;
 begin
 //lazarus
@@ -155,7 +149,6 @@ if Form1.Label1.Text = 'Aperture' then
    end
 end;
 
-
 procedure LoadLists;
 begin
   Lists.iso(Form1.ComboBox1.Items);
@@ -164,11 +157,9 @@ begin
   Form1.ComboBox1.ItemIndex:= 1;
   Form1.ComboBox2.ItemIndex:= 7;
   Form1.ComboBox3.ItemIndex:= 4;
-
 //Form1.ComboBox1.Caption:= Form1.ComboBox1.Items[0];
 //Form1.ComboBox2.Caption:= Form1.ComboBox2.Items[0];
 //Form1.ComboBox3.Caption:= Form1.ComboBox3.Items[0];
-
 end;
 
 procedure TForm1.Button1Click(Sender: TObject);
@@ -195,7 +186,6 @@ procedure TForm1.FormCreate(Sender: TObject);
 const
   comboFontSize = 42;
   labelFontSize = 12;
-
 begin
 //n900
 //  Form1.Width:= 800;
@@ -224,9 +214,7 @@ begin
 ////  ComboBox3.Width:=255; //n900
 //    ComboBox3.Width:=223; //n810
     ComboBox3.ItemHeight:= comboFontSize;
-
   Edit1.ReadOnly:= true;
-
   Form1.Caption:= 'Photographic light meter';
   //delphi fmx
   Label2.Text := 'ISO';
@@ -242,14 +230,12 @@ begin
   //Label1.Caption:= 'Aperture';
   //Label5.Caption := ' ';
   //Button1.Caption:= 'Recalculate';
-
   Label1.Font.Size := labelFontSize;
   Label2.Font.Size := labelFontSize;
   Label3.Font.Size := labelFontSize;
   Label4.Font.Size := labelFontSize;
   Label5.Font.Size := labelFontSize;
   Button1.Font.Size:= labelFontSize;
-
   LoadLists;
   Recalc;
 end;

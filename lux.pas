@@ -1,14 +1,20 @@
 unit Lux;
 
-{$mode objfpc}{$H+}
+//lazarus
+//{$mode objfpc}{$H+}
 
 interface
 //uses
-  //Classes, SysUtils; 
+  //Classes, SysUtils;
          function GetLight() : integer;
 implementation
-uses Dialogs, SysUtils, strutils;
+//lazarus
+//uses Dialogs, SysUtils, strutils;
+uses FMX.Dialogs, System.SysUtils, System.Sensors;
 
+
+//lazarus linux
+{
 function readIntFromFile(var path: string): integer;
 var
   f: textfile;
@@ -155,5 +161,49 @@ begin
 
   if b = false then Dialogs.ShowMessage ('Hardware light-meter not found!');
 end; //GetLight
+}
+
+//delphi fmx
+
+function GetLight(): integer;
+var
+
+  MySensorArray : TSensorArray;
+
+  MyAmbientLightSensor : TCustomLightSensor;
+
+begin
+
+  try
+
+    TSensorManager.Current.Activate; // activate sensor manager
+
+    // use GetSensorsByCategory to see if a Light sensor is found
+
+    MySensorArray := TSensorManager.Current.GetSensorsByCategory(TSensorCategory.Light);
+
+    if MySensorArray <> nil then begin  // check if Ambient Light Sensor is found
+
+      //Fmx.Dialogs.ShowMessage('Ambient Light Sensor Found');
+
+      MyAmbientLightSensor := MySensorArray[0] as TCustomLightSensor;
+
+      GetLight := Round(MyAmbientLightSensor.Lux);
+
+    end
+
+    else begin
+      GetLight := 0;
+      Fmx.Dialogs.ShowMessage('Ambient Light Sensor Not Found!')
+
+    end;
+
+  finally
+
+    TSensorManager.Current.DeActivate // deactivate sensor manager
+
+  end;
+
+end;
 end.
 

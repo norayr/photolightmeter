@@ -1,11 +1,12 @@
 unit Lists;
 
-{$mode objfpc}{$H+}
+//lazarus
+//{$mode objfpc}{$H+}
 
 interface
 
 uses
-  Classes, SysUtils;
+  Classes, System.SysUtils;
 
 const
   iso_bin : array[0..5] of integer = (50, 100, 200, 400, 800, 1600);

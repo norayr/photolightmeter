@@ -1,6 +1,7 @@
 unit Calculate;
 
-{$mode objfpc}{$H+}
+//lazarus
+//{$mode objfpc}{$H+}
 
 interface
 

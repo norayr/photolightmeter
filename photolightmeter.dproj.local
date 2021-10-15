@@ -6,5 +6,5 @@
     <Transaction>2021/10/14 12:25:55.000.686,C:\Users\noch\Documents\Embarcadero\Studio\Projects\Unit1.pas=C:\Users\noch\Desktop\prj\photolightmeter_android\Unit1.pas</Transaction>
     <Transaction>2021/10/14 12:26:08.000.513,C:\Users\noch\Documents\Embarcadero\Studio\Projects\Project1.dproj=C:\Users\noch\Desktop\prj\photolightmeter_android\Project1.dproj</Transaction>
     <Transaction>2021/10/14 15:49:57.046,C:\Users\noch\Desktop\prj\photolightmeter_android\photolightmeter.dproj=C:\Users\noch\Desktop\prj\photolightmeter_android\Project1.dproj</Transaction>
-  </Transactions>  <BT_BuildType>AppStore</BT_BuildType>
+  </Transactions>  <BT_BuildType>Debug</BT_BuildType>
 </BorlandProject>

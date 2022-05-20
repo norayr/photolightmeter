@@ -187,6 +187,9 @@ begin
       //Fmx.Dialogs.ShowMessage('Ambient Light Sensor Found');
 
       MyAmbientLightSensor := MySensorArray[0] as TCustomLightSensor;
+        if (not MyAmbientLightSensor.Started) then begin
+          MyAmbientLightSensor.Start
+        end;
 
       GetLight := Round(MyAmbientLightSensor.Lux);
 

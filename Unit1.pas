@@ -19,6 +19,8 @@ type
     Label3: TLabel;
     Label4: TLabel;
     Label5: TLabel;
+    Label6: TLabel;
+    Label7: TLabel;
     procedure FormCreate(Sender: TObject);
     procedure ComboBox1Change(Sender: TObject);
     procedure ComboBox2Change(Sender: TObject);
@@ -80,6 +82,8 @@ begin
   s := GetSpeed();
   n := GetAperture();
   e := Lux.GetLight();
+           //maybe temporarily
+           Form1.Label7.Text := IntToStr(e);
       t := Calculate.Shutter(s, e, n);
       //lazarus
       //if t < 1/1500 then Form1.Label5.Caption := toomuchlight else Form1.Label5.Caption := lightisok;
@@ -105,6 +109,9 @@ begin
   s := GetSpeed();
   t := GetShutter();
   e := Lux.GetLight();
+           //maybe temporarily
+           Form1.Label7.Text := IntToStr(e);
+
   n := Calculate.Aperture(s, e, t);
   if n <= 1.1 then begin
      //lazarus
@@ -236,6 +243,12 @@ begin
   Label4.Font.Size := labelFontSize;
   Label5.Font.Size := labelFontSize;
   Button1.Font.Size:= labelFontSize;
+  //maybe temporary
+  Label6.Font.Size := labelFontSize;
+  Label7.Font.Size := labelFontSize;
+  Label6.Text := 'Lux: ';
+  Label7.Text := '';
+
   LoadLists;
   Recalc;
 end;

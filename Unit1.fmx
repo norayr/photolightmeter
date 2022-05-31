@@ -15,7 +15,7 @@ object Form1: TForm1
     Position.X = 32.000000000000000000
     Position.Y = 200.000000000000000000
     Size.Width = 184.000000000000000000
-    Size.Height = 73.000000000000000000
+    Size.Height = 32.000000000000000000
     Size.PlatformDefault = False
   end
   object ComboBox1: TComboBox
@@ -78,5 +78,17 @@ object Form1: TForm1
     Size.PlatformDefault = False
     Text = 'Label5'
     TabOrder = 9
+  end
+  object Label6: TLabel
+    Position.X = 32.000000000000000000
+    Position.Y = 344.000000000000000000
+    Text = 'Label6'
+    TabOrder = 11
+  end
+  object Label7: TLabel
+    Position.X = 200.000000000000000000
+    Position.Y = 344.000000000000000000
+    Text = 'Label7'
+    TabOrder = 12
   end
 end

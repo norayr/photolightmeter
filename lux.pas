@@ -164,7 +164,29 @@ end; //GetLight
 }
 
 //delphi fmx
+ {
+function GetLight3(var d: double): integer;
+var
+  m: TSensorManager;
+  l: TCustomLightSensor;
+  a: TSensorArray;
+  i: integer;
+begin
+  m := TSensorManager.Current;
+  m.Activate;
 
+  t := m.GetSensorsByCategory(TSensorCategory.Light);
+  if t <> nil then begin
+    for i := 0 to Length(t) - 1 do
+    begin
+      l[i] := t[0] as TCustomLightSensor;
+      l.Start;
+    end;
+
+  end;
+
+end;
+  }
 function GetLight(): integer;
 var
 
@@ -173,7 +195,6 @@ var
   MyAmbientLightSensor : TCustomLightSensor;
 
 begin
-
   try
 
     TSensorManager.Current.Activate; // activate sensor manager
@@ -187,12 +208,11 @@ begin
       //Fmx.Dialogs.ShowMessage('Ambient Light Sensor Found');
 
       MyAmbientLightSensor := MySensorArray[0] as TCustomLightSensor;
-        if (not MyAmbientLightSensor.Started) then begin
-          MyAmbientLightSensor.Start
-        end;
+      if (not MyAmbientLightSensor.Started) then begin
+        MyAmbientLightSensor.Start
+      end;
 
       GetLight := Round(MyAmbientLightSensor.Lux);
-
     end
 
     else begin

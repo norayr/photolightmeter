@@ -1,3 +1,10 @@
+photolightmeter (1.9.8)  unstable; urgency=low
+
+  * chimaera build
+  * dependency name changes
+
+ -- norayr chilingarian <norayr@arnet.am>  Mon, 19 Dec 2022 00:53:07 +0400
+
 photolightmeter (1.9.7)  unstable; urgency=low
 
   * fixed font sizes

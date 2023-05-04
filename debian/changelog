@@ -1,3 +1,15 @@
+photolightmeter (2.0.0-2+leste1)  unstable; urgency=low
+
+  * let me just release 2.0.0-2 with updated creative commons icon.
+
+ -- norayr chilingarian <norayr@arnet.am>  Tue, 04 May 2023 17:24:07 +0400
+
+photolightmeter (1.9.9)  unstable; urgency=low
+
+  * also show lux data, sync with android version
+
+ -- norayr chilingarian <norayr@arnet.am>  Tue, 31 May 2022 17:03:07 +0400
+
 photolightmeter (1.9.8)  unstable; urgency=low
 
   * chimaera build

@@ -32,3 +32,8 @@ other screenshots
 ![](screenshots/screenshot01.png)
 ![](screenshots/screenshot03.png)
 ![](screenshots/screenshot06.png)
+
+
+old [video](https://toobnix.org/w/pqFhHgXj4yp4v51un9bwsN) featuring photolight meter under maemo leste on motorola droid 4
+
+
